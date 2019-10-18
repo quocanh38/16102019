@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+        let students = [
+            {
+                name: "Quyet",
+                age: 12,
+                score: 10
+            },
+            {
+                name: "Quyet",
+                age: 10,
+                score: 1
+            },
+            {
+                name: "Huy",
+                age: 14,
+                score: 1
+            },
+            {
+                name: "Hong",
+                age: 15,
+                score: 4
+            },
+            {
+                name: "Ha",
+                age: 10,
+                score: 10
+            },
+            {
+                name: "Hoang",
+                age: 20,
+                score: 8
+            }
+        ];
+        /**
+                 * Viết 1 function in ra số tuổi của từng học sinh
+                 * Viết 1 function trả về tổng số tuổi của những người có điểm lớn hơn 5
+                 * Viết 1 function trả về 1 mảng chưa tên của những học sinh có tuổi lớn hơn 10
+                 * Viết 1 function trả về 1 mảng các học sinh có tuổi lơn hơn 10 và nhỏ hơn 15
+                 */
+
+        //printStudentsAge()
+        //sumStundentsAge()
+        //studentsName()
+        //students10to15YearsOld()
+
+        function printStudentsAge() {
+            students.forEach(item => {
+                console.log(`${item.name} are ${item.age} years old.`)
+            })
+        }
+
+        function sumStundentsAge() {
+            let stundentsHaveGoodScore = students.filter(item => item.score > 5)
+            let result = stundentsHaveGoodScore.reduce((sum, current) => sum + current.age, 0)
+            console.log(result)
+        }
+
+        function studentsName() {
+            let studentsMoreThan10YearsOld = students.filter(item => item.age > 10)
+            let result = studentsMoreThan10YearsOld.map(item => item.name)
+            console.log(result)
+        }
+
+        function students10to15YearsOld() {
+            let result = students.filter(item => item.age > 10 && item.age < 15)
+            console.log(result)
+        }
+
+    </script>
+
+</body>
+
+</html>
